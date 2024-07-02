@@ -136,7 +136,7 @@ resource "azurerm_application_gateway" "appgw" {
 
 module "aks" {
   #checkov:skip=CKV_AZURE_141:We enable admin account here so we can provision K8s resources directly in this simple example
-  source = "../.."
+  source = "git::https://github.com/Azure/terraform-azurerm-aks"
 
   prefix                    = random_id.name.hex
   resource_group_name       = local.resource_group.name
